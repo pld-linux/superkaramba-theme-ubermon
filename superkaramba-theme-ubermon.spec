@@ -1,4 +1,3 @@
-
 %define		theme	ubermon
 
 Summary:	superkaramba - Ubermon theme
@@ -16,39 +15,35 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Ubermon theme for superkaramba.
- FEATURES:
- 
- --User@hostname Output
- --Kernel Version Output
- --KDE Version Output
- --CPU Usage Stats
- --CPU Model / Clockspeed / Cache Detection
- --RAM / Swapfile Usage
- --Hard Disk Drive Monitor (default 4 partitions)
- --Network Traffic Monitor
- --IP Address Output
- --Uptime / Time / Date Output
- --XMMS - Currently Playing and Time of Track Information
- --XMMS Controls - Skip back, Play, Stop, Pause and Skip Forward
+Ubermon theme for superkaramba. Features:
+- User@hostname Output
+- Kernel Version Output
+- KDE Version Output
+- CPU Usage Stats
+- CPU Model / Clockspeed / Cache Detection
+- RAM / Swapfile Usage
+- Hard Disk Drive Monitor (default 4 partitions)
+- Network Traffic Monitor
+- IP Address Output
+- Uptime / Time / Date Output
+- XMMS - Currently Playing and Time of Track Information
+- XMMS Controls - Skip back, Play, Stop, Pause and Skip Forward
 
 %description -l pl
-Motyw ubermon do superkaramby.
- Pokazuje informacje o:
- 
- --U¿ytkownik@host
- --Wersja kernela
- --Wersja KDE
- --Statystyki wykorzystania CPU
- --Model CPU / Prêdko¶æ zegara / Pamiêæ cache
- --Wykorzystanie pamiêci RAM / pliku wymiany SWAP
- --Monitor dysku twardego (domy¶lnie 4 partycje)
- --Monitor ruchu sieciowego
- --Adres IP 
- --Uptime / Godzina / Czas
- --XMMS - Informacja o utworze i czasie otwarzania
- --XMMS Przyciski - Poprzedni, Odtwarzaj, Stop, Pauza i Nastêpny
- 
+Motyw ubermon do superkaramby. Wy¶wietlane informacje:
+- U¿ytkownik@host
+- Wersja j±dra
+- Wersja KDE
+- Statystyki wykorzystania procesora
+- Model procesora / Prêdko¶æ zegara / Pamiêæ cache
+- Wykorzystanie pamiêci RAM / pliku wymiany SWAP
+- Monitor dysku twardego (domy¶lnie 4 partycje)
+- Monitor ruchu sieciowego
+- Adres IP
+- Uptime / Godzina / Czas
+- XMMS - Informacja o utworze i czasie otwarzania
+- Przyciski XMMS - Poprzedni, Odtwarzaj, Stop, Pauza i Nastêpny
+
 %prep
 %setup -q -c
 
@@ -63,7 +58,7 @@ install ubermon%{version}/*.theme $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files 
+%files
 %defattr(644,root,root,755)
 %dir %{_datadir}/themes/superkaramba/ubermon
 %dir %{_datadir}/themes/superkaramba/ubermon/icons/
