@@ -4,10 +4,11 @@ Summary:	superkaramba - Ubermon theme
 Summary(pl):	superkaramba - motyw Ubermon
 Name:		superkaramba-theme-%{theme}
 Version:	1.0
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Themes
 Source0:	http://kde-look.org/content/files/13166-ubermon%{version}.tar
+Patch0:		ubermon.theme.patch
 # Source0-md5:	f34d707f6493762ddbc24ee6c9136673
 URL:		http://www.kde-look.org/content/show.php?content=13166
 Requires:	superkaramba
@@ -46,6 +47,7 @@ Motyw ubermon do superkaramby. Wy¶wietlane informacje:
 
 %prep
 %setup -q -c
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
