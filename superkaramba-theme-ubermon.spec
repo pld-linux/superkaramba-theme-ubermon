@@ -12,6 +12,9 @@ Patch0:		ubermon.theme.patch
 # Source0-md5:	f34d707f6493762ddbc24ee6c9136673
 URL:		http://www.kde-look.org/content/show.php?content=13166
 Requires:	superkaramba
+Requires:	coreutils
+Requires:	procps
+Requires:	net-tools
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
