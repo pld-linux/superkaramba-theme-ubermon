@@ -4,7 +4,7 @@ Summary:	superkaramba - Ubermon theme
 Summary(pl):	superkaramba - motyw Ubermon
 Name:		superkaramba-theme-%{theme}
 Version:	1.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		Themes
 Source0:	http://kde-look.org/content/files/13166-ubermon%{version}.tar
@@ -15,6 +15,7 @@ Requires:	superkaramba
 Requires:	coreutils
 Requires:	procps
 Requires:	net-tools
+BuildRequires:  sed >= 4.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,13 +53,30 @@ Motyw ubermon do superkaramby. Wy¶wietlane informacje:
 %setup -q -c
 %patch0 -p1
 
+# theme modified to white/black font
+cd ubermon%{version}
+cp ubermon.theme ubermon-white.theme
+mv ubermon.theme ubermon-black.theme
+
+%{__sed} -i 's/0,0,0/255,255,255/' ubermon-white.theme
+%{__sed} -i 's/1,1,1/254,254,254/' ubermon-white.theme
+
 %install
 rm -rf $RPM_BUILD_ROOT
+
+# symbolic link to backward compability
+cd ubermon%{version}/
+ln -sf ubermon-black.theme ubermon.theme
+cd -
+
 install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/ubermon
 install -d $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/ubermon/icons
 install ubermon%{version}/icons/*.png $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/ubermon/icons
 install ubermon%{version}/*.pl $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/ubermon
 install ubermon%{version}/*.theme $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/ubermon
+
+#cd $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/ubermon/
+#ln -s ubermon-black.theme ubermon.theme
 
 %clean
 rm -rf $RPM_BUILD_ROOT
