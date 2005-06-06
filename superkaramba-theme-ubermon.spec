@@ -11,11 +11,11 @@ Source0:	http://kde-look.org/content/files/13166-ubermon%{version}.tar
 Patch0:		ubermon.theme.patch
 # Source0-md5:	f34d707f6493762ddbc24ee6c9136673
 URL:		http://www.kde-look.org/content/show.php?content=13166
-Requires:	superkaramba
+BuildRequires:	sed >= 4.0
 Requires:	coreutils
-Requires:	procps
 Requires:	net-tools
-BuildRequires:  sed >= 4.0
+Requires:	procps
+Requires:	superkaramba
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -75,14 +75,10 @@ install ubermon%{version}/icons/*.png $RPM_BUILD_ROOT%{_datadir}/themes/superkar
 install ubermon%{version}/*.pl $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/ubermon
 install ubermon%{version}/*.theme $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/ubermon
 
-#cd $RPM_BUILD_ROOT%{_datadir}/themes/superkaramba/ubermon/
-#ln -s ubermon-black.theme ubermon.theme
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%dir %{_datadir}/themes/superkaramba/ubermon
-%{_datadir}/themes/superkaramba/ubermon/
+%{_datadir}/themes/superkaramba/ubermon
 %attr(755,root,root) %{_datadir}/themes/superkaramba/ubermon/ipadd.pl
