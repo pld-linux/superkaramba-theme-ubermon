@@ -1,7 +1,7 @@
 %define		theme	ubermon
 
 Summary:	superkaramba - Ubermon theme
-Summary(pl):	superkaramba - motyw Ubermon
+Summary(pl.UTF-8):   superkaramba - motyw Ubermon
 Name:		superkaramba-theme-%{theme}
 Version:	1.0
 Release:	3
@@ -34,20 +34,20 @@ Ubermon theme for superkaramba. Features:
 - XMMS - Currently Playing and Time of Track Information
 - XMMS Controls - Skip back, Play, Stop, Pause and Skip Forward
 
-%description -l pl
-Motyw ubermon do superkaramby. Wy¶wietlane informacje:
-- U¿ytkownik@host
-- Wersja j±dra
+%description -l pl.UTF-8
+Motyw ubermon do superkaramby. WyÅ›wietlane informacje:
+- UÅ¼ytkownik@host
+- Wersja jÄ…dra
 - Wersja KDE
 - Statystyki wykorzystania procesora
-- Model procesora / Prêdko¶æ zegara / Pamiêæ cache
-- Wykorzystanie pamiêci RAM / pliku wymiany SWAP
-- Monitor dysku twardego (domy¶lnie 4 partycje)
+- Model procesora / PrÄ™dkoÅ›Ä‡ zegara / PamiÄ™Ä‡ cache
+- Wykorzystanie pamiÄ™ci RAM / pliku wymiany SWAP
+- Monitor dysku twardego (domyÅ›lnie 4 partycje)
 - Monitor ruchu sieciowego
 - Adres IP
 - Uptime / Godzina / Czas
 - XMMS - Informacja o utworze i czasie otwarzania
-- Przyciski XMMS - Poprzedni, Odtwarzaj, Stop, Pauza i Nastêpny
+- Przyciski XMMS - Poprzedni, Odtwarzaj, Stop, Pauza i NastÄ™pny
 
 %prep
 %setup -q -c
