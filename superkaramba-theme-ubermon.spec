@@ -1,7 +1,7 @@
 %define		theme	ubermon
 
 Summary:	superkaramba - Ubermon theme
-Summary(pl.UTF-8):   superkaramba - motyw Ubermon
+Summary(pl.UTF-8):	superkaramba - motyw Ubermon
 Name:		superkaramba-theme-%{theme}
 Version:	1.0
 Release:	3
