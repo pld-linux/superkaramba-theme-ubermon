@@ -4,7 +4,7 @@ Summary:	superkaramba - Ubermon theme
 Summary(pl.UTF-8):	superkaramba - motyw Ubermon
 Name:		superkaramba-theme-%{theme}
 Version:	1.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		Themes
 Source0:	http://kde-look.org/CONTENT/content-files/22700-ubermon%{version}.tar.gz
@@ -58,6 +58,9 @@ mv ubermon.theme ubermon-black.theme
 
 %{__sed} -i 's/0,0,0/255,255,255/' ubermon-white.theme
 %{__sed} -i 's/1,1,1/254,254,254/' ubermon-white.theme
+
+# For 2+ processors theme looks ugly, changed output to 1 line.
+%{__sed} -i 's,/proc/cpuinfo | grep,/proc/cpuinfo | grep -m 1,g' ubermon-*.theme
 
 %install
 rm -rf $RPM_BUILD_ROOT
